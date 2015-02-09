@@ -8,6 +8,10 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -16,6 +20,7 @@ public class MainActivity extends ActionBarActivity {
     private RecyclerView mRecyclerView;
     private RecyclerView.LayoutManager mLayoutManager;
     private NoteListItemAdapter mAdapter;
+    private Button mButton;
 
 
     @Override
@@ -32,7 +37,31 @@ public class MainActivity extends ActionBarActivity {
         mAdapter = new NoteListItemAdapter(this, mRecyclerView);
         mRecyclerView.setAdapter(mAdapter);
 
+        mButton = (Button) findViewById(R.id.button);
+        mButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick (View v){
+                // Get the text in the EditText
+                EditText editText = (EditText) findViewById(R.id.edit_text);
+                String text = editText.getText().toString();
 
+                // Create a new NoteListItem with the text
+                NoteListItem noteListItem = new NoteListItem(text);
+
+                // Add the item to the adapter
+                mAdapter.addItem(noteListItem);
+
+                // Set the EditText to an empty string
+                editText.setText(" ");
+                // editText.setText("Something here");
+
+                // Context context = getApplicationContext();
+                // CharSequence text = "Note Added";
+                // int duration = Toast.LENGTH_SHORT;
+                // Toast toast = Toast.makeText(context, text, duration);
+                // toast.show();
+                }
+            });
     }
 
 

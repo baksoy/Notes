@@ -19,9 +19,9 @@ public class NoteListItemAdapter extends RecyclerView.Adapter<NoteListItemAdapte
     private Context mContext;
     private RecyclerView mRecyclerView;
     private List<NoteListItem> mNoteListItems = new ArrayList<NoteListItem>() {
-        {
-            add(new NoteListItem("This is your first note."));
-        }
+//        {
+//            add (new NoteListItem("This is your first note."));
+//        }
     };
 
     public NoteListItemAdapter(Context context, RecyclerView recyclerView) {
@@ -44,6 +44,12 @@ public class NoteListItemAdapter extends RecyclerView.Adapter<NoteListItemAdapte
     @Override
     public int getItemCount() {
         return mNoteListItems.size();
+    }
+
+    public void addItem (NoteListItem item){
+        mNoteListItems.add(0, item); //add note to beginning of the list
+        //mNoteListItems.add(mNoteListItems.size(), item); try this to see if it will work to add note to the end of the list
+        notifyItemInserted(0);
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
