@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,6 +33,16 @@ public class NoteListItemAdapter extends RecyclerView.Adapter<NoteListItemAdapte
     @Override
     public NoteListItemAdapter.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View v = LayoutInflater.from(mContext).inflate(R.layout.note_list_item, viewGroup, false);
+        v.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Get the position of v
+                int position = mRecyclerView.getChildPosition(v);
+                // Call the removeItem method with the position
+                removeItem(position);
+                Toast.makeText (mContext, "Note Removed", Toast.LENGTH_SHORT).show();
+            }
+        });
         return new ViewHolder(v);
     }
 
@@ -47,10 +58,17 @@ public class NoteListItemAdapter extends RecyclerView.Adapter<NoteListItemAdapte
     }
 
     public void addItem (NoteListItem item){
-        mNoteListItems.add(0, item); //add note to beginning of the list
-        //mNoteListItems.add(mNoteListItems.size(), item); try this to see if it will work to add note to the end of the list
+        //add note to beginning of the list
+        mNoteListItems.add(0, item);
         notifyItemInserted(0);
     }
+
+    public void removeItem (int position){
+        //remove note after tapping
+        mNoteListItems.remove(position);
+        notifyItemRemoved(position);
+    }
+
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         private TextView text;
