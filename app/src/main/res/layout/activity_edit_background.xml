@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/av"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:longClickable="false">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentRight="false"
+        android:inputType="none"
+        android:background="#ff485367"
+        android:elegantTextHeight="false"
+        android:enabled="false"
+        android:focusable="false"
+        android:gravity="center_vertical"
+        android:paddingLeft="40dp"
+        android:paddingStart="40dp"
+        android:text="@string/bg_title"
+        android:textColor="#ffe8edec"
+        android:textSize="26sp" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup_bg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="45dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="100dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:text="Bakcground Color"
+            android:textSize="22dp" />
+
+        <RadioButton
+            android:id="@+id/radioButton_bg_red"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="Red"
+            android:textSize="22dp"
+             />
+
+        <RadioButton
+            android:id="@+id/radioButton_bg_green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="Green"
+            android:textSize="22dp"
+             />
+
+        <RadioButton
+            android:id="@+id/radioButton_bg_white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="White"
+            android:textSize="22dp"
+             />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/radioGroup_fg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/radioGroup_bg"
+        android:layout_alignStart="@+id/radioGroup_bg"
+        android:layout_below="@+id/radioGroup_bg"
+        android:layout_marginTop="40dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:text="Foreground Color"
+            android:textSize="22dp" />
+
+
+        <RadioButton
+            android:id="@+id/radioButton_fg_yellow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="Yellow"
+            android:textSize="22dp" />
+
+        <RadioButton
+            android:id="@+id/radioButton_fg_purple"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="Purple"
+            android:textSize="22dp" />
+
+        <RadioButton
+            android:id="@+id/radioButton_fg_grey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="Grey"
+            android:textSize="22dp" />
+
+
+        <RadioButton
+            android:id="@+id/radioButton_fg_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="Black"
+            android:textSize="22dp" />
+
+    </RadioGroup>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/radioGroup_fg"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
+        android:text="@string/note_save_label"
+        android:id="@+id/SettingSaveButton" />
+
+</RelativeLayout>

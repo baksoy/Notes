@@ -2,7 +2,37 @@
 <resources>
 
     <string name="app_name">Note Taking App</string>
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_edit_note">Edit Note</string>
+
+    <string name="note_text_label">Note:</string>
+    <string name="note_status_label">Resolved</string>
+    <string name="note_tags_label">Tags:</string>
+    <string name="note_save_label">Save</string>
+
+    <string name="setting_color_title">Note Color Setting</string>
+    <string name="setting_color_message">R - Red; G - Green; W - White</string>
+    <string name="positive_button_label">OK</string>
+    <string name="negative_button_label">CANCEL</string>
+
+    <string name="setting_color_title2">Note Color Setting</string>
+    <string name="setting_color_message2">R - Red; G - Green; W - White</string>
+    <string name="positive_button_label2">OK</string>
+    <string name="negative_button_label2">CANCEL</string>
+
+    <string name="color_setting_title">Settings</string>
+
+    <string name="bg_title">Settings</string>
+    <string name="bg_red">Red</string>
+    <string name="bg_green">Green</string>
+    <string name="bg_white">White</string>
+
+    <string name="fg_title">Foreground Color</string>
+    <string name="fg_yellow">Yellow</string>
+    <string name="fg_purple">Purple</string>
+    <string name="fg_grey">Grey</string>
+    <string name="fg_black">Black</string>
+    <string name="title_activity_app_setting">Settings</string>
+    <string name="setting_button">Save</string>
 
 </resources>

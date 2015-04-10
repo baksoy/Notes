@@ -1,16 +1,55 @@
 package com.thinkful.notes;
 
-/**
- * Created by beraaksoy on 2/7/15.
- */
-public class NoteListItem {
-    private String text;
+import java.io.Serializable;
+import java.util.Calendar;
 
-    public NoteListItem (String text){
-        this.text = text;
+/* A POJO for a single piece of Note */
+public class NoteListItem implements Serializable {
+    private Long id;
+    private String text;
+    private String status;
+    private Calendar date;
+
+    public NoteListItem (String text) {
+        this(null, text, "Open", Calendar.getInstance());
     }
 
-    public String getText(){
+    public NoteListItem (Long id, String text, String status, Calendar date) {
+        setId(id);
+        setText(text);
+        setStatus(status);
+        setDate(date);
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public Calendar getDate() {
+        return date;
+    }
+
+    public void setDate(Calendar date) {
+        this.date = date;
+    }
+
+    public String getText() {
         return this.text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
     }
 }
